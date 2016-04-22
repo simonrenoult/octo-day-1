@@ -1,0 +1,28 @@
+{
+  "name": "day-1",
+  "version": "0.0.0",
+  "description": "An API server in Hapi.js",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "hapi": "^13.3.0",
+    "istanbul": "^0.4.3",
+    "sinon": "^1.17.3"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "istanbul cover --include-all-sources --print detail _mocha -- -R spec test",
+    "start": "bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.octo.com:woapi/api-formation-day-1.git"
+  },
+  "author": "SRE & FJA",
+  "license": "ISC"
+}

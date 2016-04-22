@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+const server = require('../')
+
+server.start((err) => {
+  if (err) throw err
+  console.log('Server running on port %d', server.info.port)
+})
