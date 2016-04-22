@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
 const server = require('../')
+const logger = require('../lib/logger')
+
+logger.addStream({ stream: process.stdout })
 
 server.start((err) => {
   if (err) throw err
-  console.log('Server running on port %d', server.info.port)
+  logger.info({port: server.info.port}, 'Server running on port %d', server.info.port)
 })

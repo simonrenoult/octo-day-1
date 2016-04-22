@@ -7,10 +7,13 @@
     "test": "test"
   },
   "dependencies": {
+    "bunyan": "^1.8.1",
     "chai": "^3.5.0",
     "hapi": "^13.3.0",
+    "hapi-bunyan": "^0.6.0",
     "istanbul": "^0.4.3",
-    "sinon": "^1.17.3"
+    "sinon": "^1.17.3",
+    "stream-blackhole": "^1.0.3"
   },
   "devDependencies": {
     "mocha": "^2.4.5"
