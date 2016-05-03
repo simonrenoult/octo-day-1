@@ -20,6 +20,14 @@ describe('GET /products/{product_id}', () => {
       })
     })
   })
+  describe('with an invalid product id', () => {
+    it('should return 400', (done) => {
+      server.inject('/products/something?api_key=aaa', (res) => {
+        expect(res.statusCode).to.equal(400)
+        done()
+      })
+    })
+  })
   describe('when product does not exist', () => {
     before(() => {
       this.getProductStub.returns(Promise.resolve(null))
