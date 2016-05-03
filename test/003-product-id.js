@@ -12,18 +12,26 @@ describe('GET /products/{product_id}', () => {
   after(() => {
     this.getProductStub.restore()
   })
+  describe('when requesting without an api key', () => {
+    it('should reply 401', (done) => {
+      server.inject('/products/42', (res) => {
+        expect(res.statusCode).to.equal(401)
+        done()
+      })
+    })
+  })
   describe('when product does not exist', () => {
     before(() => {
       this.getProductStub.returns(Promise.resolve(null))
     })
     it('should return 404', (done) => {
-      server.inject('/products/42', (res) => {
+      server.inject('/products/42?api_key=aaa', (res) => {
         expect(res.statusCode).to.equal(404)
         done()
       })
     })
     it('should contain the appropriate values', (done) => {
-      server.inject('/products/42', (res) => {
+      server.inject('/products/42?api_key=aaa', (res) => {
         expect(res.result).to.have.property('statusCode').and.to.equal(404)
         expect(res.result).to.have.property('error').and.to.equal('Not Found')
         done()
@@ -35,13 +43,13 @@ describe('GET /products/{product_id}', () => {
       this.getProductStub.returns(Promise.resolve({id: 1}))
     })
     it('should return 200', (done) => {
-      server.inject('/products/1', (res) => {
+      server.inject('/products/1?api_key=aaa', (res) => {
         expect(res.statusCode).to.equal(200)
         done()
       })
     })
     it('should contain the appropriate values', (done) => {
-      server.inject('/products/1', (res) => {
+      server.inject('/products/1?api_key=aaa', (res) => {
         expect(res.result).to.have.property('id').and.to.equal(1)
         done()
       })
