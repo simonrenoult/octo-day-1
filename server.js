@@ -7,7 +7,8 @@ const boom = require('boom')
 server.connection({ port: 3000 })
 server.route([
   routes.listProducts,
-  routes.getProduct
+  routes.getProduct,
+  routes.createProduct
 ])
 
 server.register([
