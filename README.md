@@ -1,20 +1,21 @@
-Node.js API with HAPI
-=====================
+# Node.js API with HAPI
 
+> A nodejs sample server written with hapijs
 
-How to use this repository
---------------------------
+## Install
 
-* install dependencies
+```
+$ npm install
+```
 
-    npm install
+## Test
 
-* run tests
+```
+$ npm test
+```
 
-    npm test
+## Start
 
-* start the server (port 3000)
-
-    npm start
-
-
+```
+$ npm start
+```
