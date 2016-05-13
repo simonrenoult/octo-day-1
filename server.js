@@ -1,11 +1,13 @@
 const hapi = require('hapi')
 const boom = require('boom')
+const env = process.env.NODE_ENV || 'development'
 
 const logger = require('./lib/logger')
 const routes = require('./lib/routes')
+const config = require(`./config/${env}`)
 
 const server = new hapi.Server({connections: {routes: {cors: true}}})
-server.connection({ port: 3000 })
+server.connection({ port: config.port })
 server.route([
   routes.listProducts,
   routes.getProduct,
