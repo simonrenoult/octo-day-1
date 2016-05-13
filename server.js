@@ -11,7 +11,9 @@ server.connection({ port: config.port })
 server.route([
   routes.listProducts,
   routes.getProduct,
-  routes.createProduct
+  routes.createProduct,
+  routes.updateOrCreateProduct,
+  routes.patchProduct
 ])
 
 server.register([

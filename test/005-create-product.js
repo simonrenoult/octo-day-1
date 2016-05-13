@@ -61,7 +61,7 @@ describe('POST /products', () => {
         done()
       })
     })
-    it('should set the name to "Untitled"', () => {
+    it('should set the name to "Untitled"', (done) => {
       const location = this.response.headers.location
       server.inject(`${location}?api_key=foo`, (response) => {
         const product = JSON.parse(response.payload)
