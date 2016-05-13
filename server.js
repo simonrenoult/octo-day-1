@@ -1,9 +1,10 @@
 const hapi = require('hapi')
-const server = new hapi.Server()
-const logger = require('./lib/logger')
-const routes = require('./lib/routes')
 const boom = require('boom')
 
+const logger = require('./lib/logger')
+const routes = require('./lib/routes')
+
+const server = new hapi.Server({connections: {routes: {cors: true}}})
 server.connection({ port: 3000 })
 server.route([
   routes.listProducts,
