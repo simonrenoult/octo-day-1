@@ -16,11 +16,13 @@
     "inert": "^4.0.0",
     "istanbul": "^0.4.3",
     "joi": "^8.0.5",
+    "lodash.pick": "^4.2.1",
     "sinon": "^1.17.3",
     "stream-blackhole": "^1.0.3",
     "vision": "^4.1.0"
   },
   "devDependencies": {
+    "chai-things": "^0.2.0",
     "mocha": "^2.4.5"
   },
   "scripts": {
