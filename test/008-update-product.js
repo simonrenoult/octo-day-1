@@ -34,7 +34,8 @@ describe('PUT /products/{product_id}', () => {
       expect(this.response.statusCode).to.equal(201)
     })
     it('should return the updated product', () => {
-      expect(JSON.parse(this.response.payload)).to.deep.equal({ id: 999999, name: 'A better mug' })
+      expect(JSON.parse(this.response.payload).id).to.equal(999999)
+      expect(JSON.parse(this.response.payload).name).to.equal('A better mug')
     })
   })
   describe('when the product id and the payload id are not the same', () => {

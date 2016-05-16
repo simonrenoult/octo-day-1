@@ -20,21 +20,6 @@ describe('POST /products', () => {
   it('should return the location of the new product', () => {
     expect(this.response.headers.location).to.exist
   })
-  it('should add a new element to the collection', (done) => {
-    server.inject('/products?api_key=foo', (response) => {
-      expect(JSON.parse(response.payload)).to.have.length(4)
-      done()
-    })
-  })
-  it('should create a new element with a unique id', (done) => {
-    server.inject('/products?api_key=foo', (response) => {
-      const uniqueProducts = JSON.parse(response.payload)
-        .map((product) => product.id)
-        .filter((id, i, self) => self.indexOf(id) === i)
-      expect(uniqueProducts.length).to.equal(4)
-      done()
-    })
-  })
 
   describe('when a name is provided', () => {
     before((done) => {

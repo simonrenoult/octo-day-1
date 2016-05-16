@@ -8,7 +8,7 @@ const expect = chai.expect
 
 chai.use(chaiThings)
 
-describe.only('GET /products?fields=id,name', () => {
+describe('GET /products?fields=id,name', () => {
   before((done) => {
     server.inject('/products?api_key=foo&fields=id,name', (response) => {
       this.response = response
