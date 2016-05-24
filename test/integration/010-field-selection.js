@@ -3,7 +3,7 @@
 const chai = require('chai')
 const chaiThings = require('chai-things')
 
-const server = require('../server')
+const server = require('../../server')
 const expect = chai.expect
 
 chai.use(chaiThings)

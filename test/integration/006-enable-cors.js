@@ -1,5 +1,5 @@
 const chai = require('chai')
-const server = require('../server')
+const server = require('../../server')
 
 const expect = chai.expect
 

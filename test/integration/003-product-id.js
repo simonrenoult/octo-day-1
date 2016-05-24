@@ -2,8 +2,8 @@
 
 const expect = require('chai').expect
 const sinon = require('sinon')
-const server = require('../')
-const products = require('../lib/products')
+const server = require('../../')
+const products = require('../../lib/products')
 
 describe('GET /products/{product_id}', () => {
   before(() => {

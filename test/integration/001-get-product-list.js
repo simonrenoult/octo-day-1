@@ -1,7 +1,7 @@
 'use strict'
 
 const expect = require('chai').expect
-const server = require('../')
+const server = require('../../')
 
 describe('GET /products', () => {
   it('should return 200', (done) => {

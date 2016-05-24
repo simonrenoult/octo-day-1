@@ -1,9 +1,9 @@
 'use strict'
 
 const expect = require('chai').expect
-const server = require('../')
+const server = require('../../')
 
-describe('the server', () => {
+describe('Server', () => {
   let subject
   it('should reply 404 on /', (done) => {
     server.inject('/', (res) => {
